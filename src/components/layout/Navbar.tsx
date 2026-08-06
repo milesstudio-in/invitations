@@ -31,7 +31,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="relative z-50 group">
               <span className="font-display font-bold text-2xl tracking-tighter text-charcoal">
-                Pathi<span className="text-champagne">rikkai</span>.
+                Miles<span className="text-champagne"> Studio</span>.
               </span>
             </Link>
 

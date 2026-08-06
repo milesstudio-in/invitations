@@ -65,7 +65,7 @@ export default function GlobalPreloader() {
         className="relative z-10 opacity-0"
       >
         <h1 className="text-4xl md:text-6xl lg:text-8xl font-display font-bold text-charcoal tracking-tighter uppercase">
-          <span className="text-maroon">Pathi</span>rikkai
+          <span className="text-maroon">Miles</span> Studio
         </h1>
       </div>
     </div>

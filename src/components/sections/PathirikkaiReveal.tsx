@@ -67,8 +67,8 @@ export default function PathirikkaiReveal() {
       <Container className="relative z-10 flex flex-col items-center justify-center w-full h-full">
         
         <div className="mb-12 text-center">
-          <h2 className="text-sm uppercase tracking-[0.3em] text-champagne mb-4 font-semibold">The Invitation</h2>
-          <p className="text-slate max-w-md mx-auto">Scroll down to unveil the Pathirikkai</p>
+          <h2 className="text-4xl md:text-5xl font-display font-medium text-charcoal mb-4">An Experience Like Physical Mail</h2>
+          <p className="text-slate max-w-md mx-auto">Scroll down to unveil your invitation</p>
         </div>
 
         {/* The 3D Card Container */}
