@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import SmoothScroll from "@/components/animations/SmoothScroll";
-import CustomCursor from "@/components/animations/CustomCursor";
+
 import GlobalPreloader from "@/components/animations/GlobalPreloader";
 
 export const metadata: Metadata = {
@@ -23,7 +23,6 @@ export default function RootLayout({
       </head>
       <body>
         <GlobalPreloader />
-        <CustomCursor />
         <SmoothScroll>
           {children}
         </SmoothScroll>

@@ -172,12 +172,12 @@ export default function ServiceStory() {
                     ref={el => { imgRefs.current[index] = el }}
                     className={`absolute inset-0 ${index !== 0 ? 'opacity-0' : ''}`}
                   >
-                    <div className="absolute top-0 left-0 w-full h-[600px] lg:h-[900px] animate-pan-y">
+                    <div className="absolute top-0 left-0 w-full h-[600px] lg:h-[900px] animate-pan-y will-change-transform">
                       <Image 
                         src={service.img}
                         alt={service.title}
                         fill
-                        priority
+                        priority={index === 0}
                         sizes="(max-width: 768px) 280px, 320px"
                         className="object-cover object-top"
                       />
