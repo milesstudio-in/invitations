@@ -11,9 +11,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-display mb-6">
               <span className="text-luxury-white font-medium">Miles</span>
-              <span className="text-champagne font-light">Studio</span>
-              <span className="text-maroon mx-1">.</span>
-              <span className="font-light tracking-wide text-white/70">Invitations</span>
+              <span className="text-champagne font-light ml-1">Studio</span>
             </h3>
             <p className="text-slate/80 font-body max-w-sm leading-relaxed mb-8">
               A luxury digital invitation studio crafting bespoke, cinematic experiences for the world's most discerning hosts.
@@ -47,7 +45,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 pb-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-slate text-sm">
-            &copy; {currentYear} MilesStudio.Invitations All rights reserved.
+            &copy; {currentYear} Miles Studio. All rights reserved.
           </p>
           <div className="flex items-center gap-2 text-sm text-slate">
             <span>Designed with</span>
@@ -58,11 +56,8 @@ export default function Footer() {
 
         {/* Massive text at the bottom */}
         <div className="w-full flex justify-center translate-y-[20%] pointer-events-none select-none overflow-hidden h-[12vw] min-h-[100px]">
-          <h1 className="text-[15vw] leading-none font-display font-bold text-white/[0.02] uppercase tracking-tighter whitespace-nowrap flex items-center justify-center">
-            <span>MILES</span>
-            <span className="font-light">STUDIO</span>
-            <span className="text-maroon/20 mx-2 md:mx-6">.</span>
-            <span className="font-light text-white/[0.01]">INVITATIONS</span>
+          <h1 className="text-[15vw] leading-none font-display font-bold text-white/[0.02] uppercase tracking-tighter whitespace-nowrap">
+            MILES STUDIO
           </h1>
         </div>
       </Container>
