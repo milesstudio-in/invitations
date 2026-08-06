@@ -1,9 +1,11 @@
 "use client";
 
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAPAnimation } from '@/hooks/useGSAPAnimation';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Container from '../ui/Container';
 
 const Icons = {
@@ -97,11 +99,26 @@ export default function ServiceStory() {
   const pinRef = useRef<HTMLDivElement>(null);
   const textRefs = useRef<(HTMLDivElement | null)[]>([]);
   const imgRefs = useRef<(HTMLDivElement | null)[]>([]);
+  
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const isMobile = useMediaQuery('(max-width: 1024px)');
+  
+  // Mobile autoplay logic
+  useEffect(() => {
+    if (!isMobile) return;
+    
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % services.length);
+    }, 4000);
+    
+    return () => clearInterval(timer);
+  }, [isMobile, currentIndex]);
 
   useGSAPAnimation((context, gsap, ScrollTrigger) => {
-    if (!sectionRef.current || !pinRef.current) return;
-
-    // Pin the entire layout
+    const isMobileDevice = window.innerWidth <= 1024;
+    if (!sectionRef.current || !pinRef.current || isMobile || isMobileDevice) return;
+    
+    // Pin the entire layout for desktop
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
@@ -124,13 +141,32 @@ export default function ServiceStory() {
     // Keep the last state visible for a bit
     tl.to({}, { duration: 1 });
 
-  }, { scope: sectionRef });
+  }, { scope: sectionRef, dependencies: [isMobile] });
+
+  // Mobile translation effect
+  useEffect(() => {
+    if (!isMobile) return;
+    
+    // Animate all text and images based on currentIndex
+    services.forEach((_, i) => {
+      if (i === currentIndex) {
+        gsap.to(textRefs.current[i], { opacity: 1, y: 0, duration: 0.5 });
+        gsap.to(imgRefs.current[i], { opacity: 1, scale: 1, duration: 0.5 });
+      } else {
+        gsap.to(textRefs.current[i], { opacity: 0, y: i < currentIndex ? -20 : 20, duration: 0.5 });
+        gsap.to(imgRefs.current[i], { opacity: 0, scale: i < currentIndex ? 1.05 : 0.95, duration: 0.5 });
+      }
+    });
+  }, [currentIndex, isMobile]);
+
+  const handleNext = () => setCurrentIndex((prev) => (prev + 1) % services.length);
+  const handlePrev = () => setCurrentIndex((prev) => (prev - 1 + services.length) % services.length);
 
   return (
     <section id="services" ref={sectionRef} className="relative bg-luxury-white w-full">
       <div 
         ref={pinRef}
-        className="w-full h-[100svh] bg-luxury-white overflow-hidden flex flex-col items-center justify-center border-t border-charcoal/5 relative"
+        className="w-full h-[100svh] bg-luxury-white overflow-hidden flex flex-col items-center justify-center md:border-t md:border-charcoal/5 relative"
       >
         <Container className="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-24 pt-20 pb-8 lg:py-0">
           
@@ -192,6 +228,26 @@ export default function ServiceStory() {
                 ))}
               </div>
             </div>
+            
+            {/* Mobile Navigation Arrows */}
+            {isMobile && (
+              <div className="absolute top-1/2 -translate-y-1/2 w-full px-4 flex justify-between z-40 pointer-events-none md:hidden">
+                <button 
+                  onClick={handlePrev}
+                  className="w-10 h-10 rounded-full bg-luxury-white border border-charcoal/10 flex items-center justify-center text-charcoal shadow-md active:bg-champagne active:text-charcoal transition-colors pointer-events-auto -translate-x-4"
+                  aria-label="Previous service"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+                <button 
+                  onClick={handleNext}
+                  className="w-10 h-10 rounded-full bg-luxury-white border border-charcoal/10 flex items-center justify-center text-charcoal shadow-md active:bg-champagne active:text-charcoal transition-colors pointer-events-auto translate-x-4"
+                  aria-label="Next service"
+                >
+                  <ChevronRight size={20} />
+                </button>
+              </div>
+            )}
           </div>
 
         </Container>

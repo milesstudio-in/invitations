@@ -15,14 +15,16 @@ export default function PathirikkaiReveal() {
   useGSAPAnimation((context, gsap, ScrollTrigger) => {
     if (!containerRef.current) return;
 
+    const isMobile = window.innerWidth < 768;
+
     // The Pathirikkai opening animation
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
-        end: "+=200%", // 2 viewport heights to scroll through the animation
+        end: isMobile ? "+=300%" : "+=200%", // 2 viewport heights to scroll through the animation
         pin: true,
-        scrub: 1,
+        scrub: isMobile ? 1.5 : 1,
       }
     });
 

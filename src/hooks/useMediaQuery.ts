@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 
 export function useMediaQuery(query: string): boolean {
   const [matches, setMatches] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const media = window.matchMedia(query);
     if (media.matches !== matches) {
       setMatches(media.matches);
@@ -13,5 +15,8 @@ export function useMediaQuery(query: string): boolean {
     return () => window.removeEventListener('resize', listener);
   }, [matches, query]);
 
+  // Prevent hydration mismatch by defaulting to false on the first render
+  if (!mounted) return false;
+  
   return matches;
 }

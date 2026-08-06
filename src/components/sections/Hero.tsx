@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from 'react';
-import Image from 'next/image';
 import Container from '../ui/Container';
 import { useGSAPAnimation } from '@/hooks/useGSAPAnimation';
 import MagneticElement from '../animations/MagneticElement';
@@ -34,15 +33,8 @@ export default function Hero() {
       ref={sectionRef} 
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-luxury-white"
     >
-      {/* Background Image & Gradient */}
+      {/* Background Gradient */}
       <div className="absolute inset-0 z-0">
-        <Image 
-          src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&q=80&w=2000"
-          alt="Clean Luxury Background"
-          fill
-          className="object-cover opacity-60 mix-blend-multiply"
-          priority
-        />
         <div className="absolute inset-0 bg-gradient-to-b from-luxury-white/40 via-luxury-white/90 to-luxury-white" />
         {/* Subtle Gold radial glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] bg-champagne/10 rounded-full blur-[120px]" />
