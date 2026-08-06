@@ -37,7 +37,7 @@ export default function Contact() {
       ? `I am interested in: ${selectedServices.join(', ')}.` 
       : 'I would like to know more about your digital invitations.';
       
-    const message = `Hello Miles Studio! 👋\n\n${servicesText}\n\nMy name is ${name} and my contact number is ${phone}. Let's discuss!`;
+    const message = `Hello MilesStudio.Invitations! 👋\n\n${servicesText}\n\nMy name is ${name} and my contact number is ${phone}. Let's discuss!`;
     const whatsappUrl = `https://wa.me/918489189183?text=${encodeURIComponent(message)}`;
 
     setTimeout(() => {

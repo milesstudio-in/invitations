@@ -29,9 +29,12 @@ export default function Navbar() {
         <Container>
           <nav className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="relative z-50 group">
-              <span className="font-display font-bold text-2xl tracking-tighter text-charcoal">
-                Miles<span className="text-champagne"> Studio</span>.
+            <Link href="/" className="relative z-50 group flex items-center">
+              <span className="font-display text-2xl tracking-tighter">
+                <span className="text-charcoal font-bold">Miles</span>
+                <span className="text-champagne font-medium">Studio</span>
+                <span className="text-maroon mx-1">.</span>
+                <span className="text-slate font-light tracking-normal text-xl">Invitations</span>
               </span>
             </Link>
 

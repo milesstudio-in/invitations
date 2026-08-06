@@ -5,7 +5,7 @@ import SmoothScroll from "@/components/animations/SmoothScroll";
 import GlobalPreloader from "@/components/animations/GlobalPreloader";
 
 export const metadata: Metadata = {
-  title: "Miles Studio | Luxury Digital Invitations",
+  title: "MilesStudio.Invitations | Luxury Digital Invitations",
   description: "Bespoke digital experiences for your most important moments.",
 };
 
