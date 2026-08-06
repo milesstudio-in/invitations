@@ -26,6 +26,9 @@ const projects = [
   }
 ];
 
+export default function FeaturedWork() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const isMobile = useMediaQuery('(max-width: 1024px)');
   
