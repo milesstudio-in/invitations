@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+:root {
+  /* Motion Tokens */
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 800ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@theme {
+  --color-luxury-white: #FAFAF8;
+  --color-ivory: #F5F3EF;
+  --color-cream: #EDE8E0;
+  --color-charcoal: #1A1A1A;
+  --color-graphite: #2D2D2D;
+  --color-slate: #6B6B6B;
+  --color-silver: #9A9A9A;
+  --color-champagne: #D4AF37;
+  --color-champagne-light: #E6C247;
+  --color-champagne-dark: #B28F20;
+  --color-maroon: #800000;
+  --color-sandalwood: #E3B87A;
+
+  --font-display: 'League Spartan', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Custom shadows */
+  --shadow-subtle: 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-medium: 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-floating: 0 8px 32px rgba(0,0,0,0.08);
+  --shadow-premium: 0 16px 64px rgba(0,0,0,0.1);
+
+  --animate-pan-y: pan-y 20s ease-in-out infinite;
+  @keyframes pan-y {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30%); }
+  }
+}
+
+@layer base {
+  html, body {
+    @apply bg-luxury-white text-charcoal font-body antialiased selection:bg-champagne selection:text-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-medium tracking-tight;
+  }
+
+  /* Lenis smooth scrolling base styles */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Reduced motion class */
+  .reduce-motion * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Utility for gradient borders */
+  .border-gradient {
+    border: 1px solid transparent;
+    background: linear-gradient(var(--color-ivory), var(--color-ivory)) padding-box, 
+                linear-gradient(to right, rgba(0,0,0,0.1), transparent) border-box;
+  }
+  
+  /* 3D Utilities for Pathirikkai */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
