@@ -68,46 +68,55 @@ export default function DemoWebsites() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {demos.map((demo, index) => (
-            <div key={index} className="demo-card group flex flex-col">
-              {/* Image Container with Hover Effect */}
-              <Link href={demo.link} className="relative w-full aspect-[3/4] overflow-hidden rounded-sm mb-6 block bg-charcoal/5">
-                <Image 
-                  src={demo.image}
-                  alt={demo.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105"
-                />
-                
-                {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
-                  <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]">
-                    <span className="bg-luxury-white text-charcoal px-8 py-3 rounded-full text-sm font-medium tracking-widest uppercase hover:bg-champagne transition-colors shadow-lg">
-                      View Demo
+            <Link 
+              key={index} 
+              href={demo.link} 
+              className="demo-card group relative w-full aspect-[4/5] overflow-hidden rounded-md block bg-charcoal"
+            >
+              {/* Background Image */}
+              <Image 
+                src={demo.image}
+                alt={demo.title}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105"
+              />
+              
+              {/* Gradient Overlay for Text Readability & Mood */}
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
+              
+              {/* Card Content (Overlaid at bottom) */}
+              <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end z-10">
+                <div className="transform translate-y-0 md:translate-y-8 group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]">
+                  
+                  <div className="flex items-center mb-4">
+                    <span className="text-champagne font-medium uppercase tracking-widest text-[10px] border border-champagne/30 px-3 py-1 rounded-full backdrop-blur-md bg-charcoal/20">
+                      {demo.category}
                     </span>
                   </div>
-                </div>
-              </Link>
+                  
+                  <h3 className="text-3xl md:text-4xl font-display font-medium text-luxury-white mb-3">
+                    {demo.title}
+                  </h3>
+                  
+                  <p className="text-luxury-white/70 text-sm leading-relaxed font-body mb-6 max-w-sm">
+                    {demo.description}
+                  </p>
 
-              {/* Card Content */}
-              <div className="flex flex-col flex-grow text-center md:text-left">
-                <div className="flex items-center justify-center md:justify-start mb-4">
-                  <span className="text-maroon font-medium uppercase tracking-widest text-xs border border-maroon/20 px-3 py-1 rounded-full">
-                    {demo.category}
-                  </span>
+                  {/* Divider and Call to Action */}
+                  <div className="flex items-center justify-between pt-6 border-t border-luxury-white/20 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                    <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-champagne flex items-center gap-2">
+                      <span className="w-8 h-[1px] bg-champagne block"></span>
+                      View Demo
+                    </span>
+                    <span className="w-8 h-8 rounded-full border border-champagne/50 flex items-center justify-center text-champagne transform -rotate-45 group-hover:rotate-0 transition-transform duration-700">
+                      &rarr;
+                    </span>
+                  </div>
+
                 </div>
-                <h3 className="text-3xl font-display font-medium text-charcoal mb-3 group-hover:text-champagne transition-colors duration-300">
-                  {demo.title}
-                </h3>
-                <p className="text-slate text-sm leading-relaxed font-body mb-6 flex-grow">
-                  {demo.description}
-                </p>
-                <Link href={demo.link} className="md:hidden inline-flex items-center justify-center gap-2 text-charcoal font-medium text-xs tracking-widest uppercase hover:text-maroon transition-colors w-fit mx-auto group/link">
-                  <span className="border-b border-charcoal/30 pb-0.5 group-hover/link:border-maroon transition-colors">View Demo</span>
-                  <span className="transform transition-transform group-hover/link:translate-x-1">&rarr;</span>
-                </Link>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </Container>
