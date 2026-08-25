@@ -4,22 +4,17 @@ import { useState } from 'react';
 import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
 import MagneticElement from '../animations/MagneticElement';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Contact() {
+  const { dict } = useLanguage();
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const services = [
-    "Wedding Invitation",
-    "Engagement",
-    "Reception",
-    "Housewarming",
-    "Baby Shower",
-    "Other Event"
-  ];
+  const services = dict.contact.services;
 
   const toggleService = (service: string) => {
     if (selectedServices.includes(service)) {
@@ -60,9 +55,9 @@ export default function Contact() {
           <div className="flex flex-col justify-between h-full max-w-xl">
             <div>
               <SectionHeading 
-                title="Let's make your event unforgettable."
-                subtitle="If you're ready to invite your guests in style, let's talk. Reach out directly or fill the form — we respond within 24 hours."
-                eyebrow="Get In Touch"
+                title={dict.contact.title}
+                subtitle={dict.contact.subtitle}
+                eyebrow={dict.contact.eyebrow}
                 align="left"
               />
               
@@ -76,7 +71,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold uppercase tracking-widest text-slate mb-1">Email</h4>
+                    <h4 className="text-sm font-semibold uppercase tracking-widest text-slate mb-1">{dict.contact.email}</h4>
                     <a href="mailto:milesstudio.in@gmail.com" className="text-xl md:text-2xl font-display text-charcoal hover:text-maroon transition-colors">
                       milesstudio.in@gmail.com
                     </a>
@@ -91,11 +86,11 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold uppercase tracking-widest text-slate mb-1">WhatsApp Fast Track</h4>
+                    <h4 className="text-sm font-semibold uppercase tracking-widest text-slate mb-1">{dict.contact.whatsappFastTrack}</h4>
                     <a href="https://wa.me/918489189183" className="text-xl md:text-2xl font-display text-charcoal hover:text-maroon transition-colors block mb-2">
                       +91 84891 89183
                     </a>
-                    <span className="text-sm text-maroon bg-maroon/10 px-3 py-1 rounded-full font-medium tracking-wide">Direct Line to Studio</span>
+                    <span className="text-sm text-maroon bg-maroon/10 px-3 py-1 rounded-full font-medium tracking-wide">{dict.contact.directLine}</span>
                   </div>
                 </div>
 
@@ -113,14 +108,14 @@ export default function Contact() {
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                 </div>
-                <h3 className="text-3xl font-display text-charcoal mb-4">Request Sent!</h3>
-                <p className="text-slate">Thank you for reaching out. We will connect with you via WhatsApp or Email shortly.</p>
+                <h3 className="text-3xl font-display text-charcoal mb-4">{dict.contact.successTitle}</h3>
+                <p className="text-slate">{dict.contact.successDesc}</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-8 animate-in fade-in duration-500">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-semibold text-slate uppercase tracking-widest">Name <span className="text-maroon">*</span></label>
+                    <label htmlFor="name" className="text-sm font-semibold text-slate uppercase tracking-widest">{dict.contact.formName} <span className="text-maroon">*</span></label>
                     <input 
                       type="text" 
                       id="name" 
@@ -128,11 +123,11 @@ export default function Contact() {
                       onChange={(e) => setName(e.target.value)}
                       required
                       className="w-full bg-transparent border-b border-charcoal/20 py-3 text-charcoal focus:outline-none focus:border-maroon transition-colors"
-                      placeholder="Your Full Name"
+                      placeholder={dict.contact.formNamePlaceholder}
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="phone" className="text-sm font-semibold text-slate uppercase tracking-widest">Phone / WhatsApp <span className="text-maroon">*</span></label>
+                    <label htmlFor="phone" className="text-sm font-semibold text-slate uppercase tracking-widest">{dict.contact.formPhone} <span className="text-maroon">*</span></label>
                     <input 
                       type="tel" 
                       id="phone" 
@@ -140,13 +135,13 @@ export default function Contact() {
                       onChange={(e) => setPhone(e.target.value)}
                       required
                       className="w-full bg-transparent border-b border-charcoal/20 py-3 text-charcoal focus:outline-none focus:border-maroon transition-colors"
-                      placeholder="+91 98765 43210"
+                      placeholder={dict.contact.formPhonePlaceholder}
                     />
                   </div>
                 </div>
 
                 <div className="space-y-4">
-                  <label className="text-sm font-semibold text-slate uppercase tracking-widest">What do you need help with? <span className="text-maroon">*</span></label>
+                  <label className="text-sm font-semibold text-slate uppercase tracking-widest">{dict.contact.formHelp} <span className="text-maroon">*</span></label>
                   <div className="flex flex-wrap gap-3">
                     {services.map((service) => (
                       <button
@@ -172,7 +167,7 @@ export default function Contact() {
                       disabled={isSubmitting || selectedServices.length === 0}
                       className="w-full bg-charcoal text-luxury-white py-4 rounded-xl font-semibold uppercase tracking-widest hover:bg-champagne hover:text-charcoal transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                     >
-                      {isSubmitting ? 'Sending...' : 'Send Request'}
+                      {isSubmitting ? dict.contact.formSending : dict.contact.formSubmit}
                       {!isSubmitting && <span>&rarr;</span>}
                     </button>
                   </MagneticElement>

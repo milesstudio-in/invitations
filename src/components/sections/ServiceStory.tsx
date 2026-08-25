@@ -7,6 +7,7 @@ import { useGSAPAnimation } from '@/hooks/useGSAPAnimation';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Container from '../ui/Container';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Icons = {
   Wedding: () => (
@@ -43,7 +44,7 @@ const Icons = {
   )
 };
 
-const services = [
+const rawServices = [
   {
     id: 'wedding',
     icon: <Icons.Wedding />,
@@ -95,6 +96,17 @@ const services = [
 ];
 
 export default function ServiceStory() {
+  const { dict } = useLanguage();
+  
+  const services = [
+    { ...rawServices[0], title: dict.services.wedding.title, subtitle: dict.services.wedding.subtitle, description: dict.services.wedding.desc },
+    { ...rawServices[1], title: dict.services.engagement.title, subtitle: dict.services.engagement.subtitle, description: dict.services.engagement.desc },
+    { ...rawServices[2], title: dict.services.babyShower.title, subtitle: dict.services.babyShower.subtitle, description: dict.services.babyShower.desc },
+    { ...rawServices[3], title: dict.services.naming.title, subtitle: dict.services.naming.subtitle, description: dict.services.naming.desc },
+    { ...rawServices[4], title: dict.services.firstBirthday.title, subtitle: dict.services.firstBirthday.subtitle, description: dict.services.firstBirthday.desc },
+    { ...rawServices[5], title: dict.services.housewarming.title, subtitle: dict.services.housewarming.subtitle, description: dict.services.housewarming.desc }
+  ];
+
   const sectionRef = useRef<HTMLElement>(null);
   const pinRef = useRef<HTMLDivElement>(null);
   const textRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -222,7 +234,7 @@ export default function ServiceStory() {
                     <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent" />
                     <div className="absolute bottom-6 left-4 right-4 lg:bottom-8 lg:left-6 lg:right-6 text-luxury-white">
                       <h4 className="font-display text-xl lg:text-2xl font-bold">{service.title}</h4>
-                      <p className="text-[10px] lg:text-xs uppercase tracking-widest opacity-80">Invitation Design</p>
+                      <p className="text-[10px] lg:text-xs uppercase tracking-widest opacity-80">{dict.services.invitationDesign}</p>
                     </div>
                   </div>
                 ))}

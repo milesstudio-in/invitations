@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import "./globals.css";
 import SmoothScroll from "@/components/animations/SmoothScroll";
 import GlobalPreloader from "@/components/animations/GlobalPreloader";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const tropika = localFont({
   src: '../../public/fonts/aiyari-tropika-island-int.otf',
@@ -27,10 +28,12 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=League+Spartan:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className={tropika.variable}>
-        <GlobalPreloader />
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
+        <LanguageProvider>
+          <GlobalPreloader />
+          <SmoothScroll>
+            {children}
+          </SmoothScroll>
+        </LanguageProvider>
       </body>
     </html>
   );

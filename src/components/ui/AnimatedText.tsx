@@ -57,7 +57,7 @@ export default function AnimatedText({
   const renderContent = () => {
     if (type === 'words') {
       return text.split(' ').map((word, i) => (
-        <span key={i} className="inline-block overflow-hidden mr-[0.25em]">
+        <span key={i} className="inline-block overflow-hidden pt-4 pb-4 -mt-4 -mb-4 mr-[0.25em]">
           <span className="animate-item inline-block origin-bottom">{word}</span>
         </span>
       ));
@@ -65,7 +65,7 @@ export default function AnimatedText({
     
     if (type === 'chars') {
       return text.split('').map((char, i) => (
-        <span key={i} className="inline-block overflow-hidden">
+        <span key={i} className="inline-block overflow-hidden pt-4 pb-4 -mt-4 -mb-4">
           <span className="animate-item inline-block origin-bottom">{char === ' ' ? '\u00A0' : char}</span>
         </span>
       ));
@@ -73,7 +73,7 @@ export default function AnimatedText({
     
     // Lines fallback to words for now as true lines require complex calculation or SplitText
     return text.split(' ').map((word, i) => (
-      <span key={i} className="inline-block overflow-hidden mr-[0.25em]">
+      <span key={i} className="inline-block overflow-hidden pt-4 pb-4 -mt-4 -mb-4 mr-[0.25em]">
         <span className="animate-item inline-block origin-bottom">{word}</span>
       </span>
     ));

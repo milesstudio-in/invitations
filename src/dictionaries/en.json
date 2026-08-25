@@ -1,0 +1,69 @@
+{
+  "navbar": {
+    "liveDemos": "Live Demos",
+    "services": "Services",
+    "contact": "Contact",
+    "whatsappUs": "WhatsApp Us"
+  },
+  "hero": {
+    "badge": "Digital Invitations",
+    "titleLine1": "Look Premium.",
+    "titleLine2": "Invite Better.",
+    "description": "Not just beautiful, built to leave a lasting impression. We craft digital experiences that capture the essence of your most important day.",
+    "cta": "Start the journey"
+  },
+  "demos": {
+    "eyebrow": "Live Demos",
+    "title": "Curated Experiences.",
+    "subtitle": "Explore our meticulously crafted template designs, ready to be personalized for your event.",
+    "viewDemo": "View Demo",
+    "engagement": { "title": "Engagement Design", "category": "Engagement", "desc": "A beautiful and simple digital invitation to announce your engagement." },
+    "wedding": { "title": "Wedding Design", "category": "Marriage", "desc": "An elegant digital invitation to share all your wedding details with guests." },
+    "birthday": { "title": "Birthday Design", "category": "Birthday", "desc": "A fun and colorful digital invitation for your birthday celebration." }
+  },
+  "services": {
+    "invitationDesign": "Invitation Design",
+    "wedding": { "title": "Weddings", "subtitle": "Thirumanam", "desc": "Share your love story and wedding details with a beautiful, interactive digital invitation." },
+    "engagement": { "title": "Engagement", "subtitle": "Nitchayathartham", "desc": "Announce your union to the world with an elegant, sharable digital invitation." },
+    "babyShower": { "title": "Baby Shower", "subtitle": "Valaikappu", "desc": "Celebrate the upcoming arrival of your little one with friends and family." },
+    "naming": { "title": "Naming Ceremony", "subtitle": "Peyar Suttum Vizha", "desc": "Welcome your newborn and share their beautiful name with the world." },
+    "firstBirthday": { "title": "1st Birthday", "subtitle": "Ayush Homam", "desc": "Make their first milestone memorable with an interactive digital story." },
+    "housewarming": { "title": "Housewarming", "subtitle": "Gruhapravesam", "desc": "Invite your loved ones to bless your new home and share in your joy." }
+  },
+  "marquee": {
+    "serving": "Serving Worldwide",
+    "locations": [
+      "Chennai",
+      "Coimbatore",
+      "Madurai",
+      "Trichy",
+      "Salem",
+      "Global"
+    ]
+  },
+  "contact": {
+    "eyebrow": "Get In Touch",
+    "title": "Let's make your event unforgettable.",
+    "subtitle": "If you're ready to invite your guests in style, let's talk. Reach out directly or fill the form — we respond within 24 hours.",
+    "email": "Email",
+    "whatsappFastTrack": "WhatsApp Fast Track",
+    "directLine": "Direct Line to Studio",
+    "formName": "Name",
+    "formNamePlaceholder": "Your Full Name",
+    "formPhone": "Phone / WhatsApp",
+    "formPhonePlaceholder": "+91 98765 43210",
+    "formHelp": "What do you need help with?",
+    "formSubmit": "Send Request",
+    "formSending": "Sending...",
+    "successTitle": "Request Sent!",
+    "successDesc": "Thank you for reaching out. We will connect with you via WhatsApp or Email shortly.",
+    "services": [
+      "Wedding Invitation",
+      "Engagement",
+      "Reception",
+      "Housewarming",
+      "Baby Shower",
+      "Other Event"
+    ]
+  }
+}

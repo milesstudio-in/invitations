@@ -6,8 +6,9 @@ import Link from 'next/link';
 import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
 import { useGSAPAnimation } from '@/hooks/useGSAPAnimation';
+import { useLanguage } from '@/context/LanguageContext';
 
-const demos = [
+const rawDemos = [
   {
     title: "Engagement Design",
     category: "Engagement",
@@ -33,6 +34,28 @@ const demos = [
 
 export default function DemoWebsites() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { dict } = useLanguage();
+
+  const demos = [
+    {
+      ...rawDemos[0],
+      title: dict.demos.engagement.title,
+      category: dict.demos.engagement.category,
+      description: dict.demos.engagement.desc,
+    },
+    {
+      ...rawDemos[1],
+      title: dict.demos.wedding.title,
+      category: dict.demos.wedding.category,
+      description: dict.demos.wedding.desc,
+    },
+    {
+      ...rawDemos[2],
+      title: dict.demos.birthday.title,
+      category: dict.demos.birthday.category,
+      description: dict.demos.birthday.desc,
+    }
+  ];
 
   useGSAPAnimation((context, gsap, ScrollTrigger) => {
     if (!sectionRef.current) return;
@@ -59,9 +82,9 @@ export default function DemoWebsites() {
     <section ref={sectionRef} id="demos" className="py-32 bg-luxury-white relative overflow-hidden">
       <Container>
         <SectionHeading 
-          title="Curated Experiences."
-          subtitle="Explore our meticulously crafted template designs, ready to be personalized for your event."
-          eyebrow="Live Demos"
+          title={dict.demos.title}
+          subtitle={dict.demos.subtitle}
+          eyebrow={dict.demos.eyebrow}
           align="center"
           className="mb-20"
         />
@@ -107,7 +130,7 @@ export default function DemoWebsites() {
                   <div className="flex items-center justify-between pt-6 border-t border-luxury-white/20 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
                     <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-champagne flex items-center gap-2">
                       <span className="w-8 h-[1px] bg-champagne block"></span>
-                      View Demo
+                      {dict.demos.viewDemo}
                     </span>
                     <span className="w-8 h-8 rounded-full border border-champagne/50 flex items-center justify-center text-champagne transform -rotate-45 group-hover:rotate-0 transition-transform duration-700">
                       &rarr;

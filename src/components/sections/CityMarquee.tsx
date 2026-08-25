@@ -4,19 +4,13 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAPAnimation } from '@/hooks/useGSAPAnimation';
 import Container from '../ui/Container';
-
-const locations = [
-  "Chennai",
-  "Coimbatore",
-  "Madurai",
-  "Trichy",
-  "Salem",
-  "Global"
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function CityMarquee() {
   const containerRef = useRef<HTMLDivElement>(null);
   const marqueeRef = useRef<HTMLDivElement>(null);
+
+  const { dict } = useLanguage();
 
   useGSAPAnimation((context, gsap) => {
     if (!marqueeRef.current) return;
@@ -30,11 +24,13 @@ export default function CityMarquee() {
     );
   }, { scope: containerRef });
 
+  const locations = dict.marquee.locations;
+
   return (
     <section ref={containerRef} className="py-24 bg-luxury-white border-y border-white/5 overflow-hidden">
       <Container className="mb-12 text-center">
         <h2 className="text-champagne text-sm uppercase tracking-widest font-semibold">
-          Serving Worldwide
+          {dict.marquee.serving}
         </h2>
       </Container>
       
