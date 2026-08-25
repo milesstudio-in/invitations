@@ -178,7 +178,7 @@ export default function ServiceStory() {
     <section id="services" ref={sectionRef} className="relative bg-luxury-white w-full">
       <div 
         ref={pinRef}
-        className="w-full h-[100svh] bg-luxury-white overflow-hidden flex flex-col items-center justify-center md:border-t md:border-charcoal/5 relative"
+        className="w-full min-h-[100svh] lg:h-[100svh] bg-luxury-white overflow-hidden flex flex-col items-center justify-center md:border-t md:border-charcoal/5 relative"
       >
         <Container className="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-24 pt-20 pb-8 lg:pt-32 lg:pb-16">
           
@@ -207,7 +207,7 @@ export default function ServiceStory() {
           {/* Right Side: Phone Mockup */}
           <div className="w-full lg:w-1/2 flex justify-center items-center flex-1 min-h-0">
             {/* Phone Bezel */}
-            <div className="relative w-[220px] h-[450px] lg:w-auto lg:h-[70vh] lg:max-h-[650px] lg:aspect-[320/650] bg-charcoal rounded-[2.5rem] lg:rounded-[3rem] p-2 lg:p-3 shadow-premium border border-charcoal/20 z-10 shrink-0">
+            <div className="relative w-[200px] h-[410px] sm:w-[220px] sm:h-[450px] lg:w-auto lg:h-[70vh] lg:max-h-[650px] lg:aspect-[320/650] bg-charcoal rounded-[2.5rem] lg:rounded-[3rem] p-2 lg:p-3 shadow-premium border border-charcoal/20 z-10 shrink-0">
               
               {/* Dynamic Island / Notch */}
               <div className="absolute top-4 lg:top-6 left-1/2 -translate-x-1/2 w-16 lg:w-24 h-5 lg:h-6 bg-luxury-white rounded-full z-30" />
