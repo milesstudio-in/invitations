@@ -95,7 +95,7 @@ export default function Contact() {
                     <a href="https://wa.me/918489189183" className="text-xl md:text-2xl font-display text-charcoal hover:text-maroon transition-colors block mb-2">
                       +91 84891 89183
                     </a>
-                    <span className="text-sm text-maroon bg-maroon/10 px-3 py-1 rounded-full font-medium">Usually responds in 1 hour</span>
+                    <span className="text-sm text-maroon bg-maroon/10 px-3 py-1 rounded-full font-medium tracking-wide">Direct Line to Studio</span>
                   </div>
                 </div>
 
