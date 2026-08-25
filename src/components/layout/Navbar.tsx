@@ -43,13 +43,17 @@ export default function Navbar() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               <div className="flex gap-8">
-                {['Services', 'Contact'].map((item) => (
-                  <MagneticElement key={item} strength={20}>
+                {[
+                  { label: 'Live Demos', href: '#demos' },
+                  { label: 'Services', href: '#services' },
+                  { label: 'Contact', href: '#contact' },
+                ].map((item) => (
+                  <MagneticElement key={item.label} strength={20}>
                     <Link 
-                      href={`#${item.toLowerCase()}`}
+                      href={item.href}
                       className="text-sm font-medium text-slate hover:text-charcoal transition-colors uppercase tracking-widest"
                     >
-                      {item}
+                      {item.label}
                     </Link>
                   </MagneticElement>
                 ))}
@@ -93,15 +97,19 @@ export default function Navbar() {
         }`}
       >
         <Container className="flex flex-col gap-8 h-full justify-center">
-          {['Services', 'Contact'].map((item, i) => (
+          {[
+            { label: 'Live Demos', href: '#demos' },
+            { label: 'Services', href: '#services' },
+            { label: 'Contact', href: '#contact' },
+          ].map((item, i) => (
             <Link 
-              key={item}
-              href={`#${item.toLowerCase()}`}
+              key={item.label}
+              href={item.href}
               className="text-4xl font-display text-charcoal uppercase tracking-widest hover:text-champagne transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              {item}
+              {item.label}
             </Link>
           ))}
           
