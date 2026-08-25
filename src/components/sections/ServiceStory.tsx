@@ -183,7 +183,7 @@ export default function ServiceStory() {
         <Container className="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-24 pt-20 pb-8 lg:pt-32 lg:pb-16">
           
           {/* Left Side: Big Text & Icons */}
-          <div className="w-full lg:w-1/2 h-48 lg:h-96 relative flex items-center justify-center lg:justify-start">
+          <div className="w-full lg:w-1/2 h-[260px] md:h-80 lg:h-96 relative flex items-center justify-center lg:justify-start shrink-0">
             {services.map((service, index) => (
               <div 
                 key={service.id}
