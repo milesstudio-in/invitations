@@ -92,18 +92,37 @@ export default function Navbar() {
               </MagneticElement>
             </div>
 
-            {/* Mobile Menu Toggle */}
-            <button 
-              className="md:hidden relative z-50 w-12 h-12 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal hover:bg-charcoal hover:text-luxury-white transition-colors"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle Menu"
-            >
-              <div className="w-5 h-4 flex flex-col justify-between">
-                <span className={`w-full h-[2px] bg-current transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
-                <span className={`w-full h-[2px] bg-current transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
-                <span className={`w-full h-[2px] bg-current transition-transform duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+            {/* Mobile Actions (Language Toggle + Hamburger) */}
+            <div className="flex md:hidden items-center gap-3 relative z-50">
+              {/* Mobile Language Toggle */}
+              <div className="flex items-center gap-1 border border-charcoal/10 rounded-full p-1 bg-luxury-white/50 backdrop-blur-sm">
+                <button 
+                  onClick={() => setLanguage('en')}
+                  className={`text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1.5 rounded-full transition-colors ${language === 'en' ? 'bg-charcoal text-luxury-white' : 'text-slate hover:text-charcoal'}`}
+                >
+                  EN
+                </button>
+                <button 
+                  onClick={() => setLanguage('ta')}
+                  className={`text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1.5 rounded-full transition-colors ${language === 'ta' ? 'bg-charcoal text-luxury-white' : 'text-slate hover:text-charcoal'}`}
+                >
+                  TA
+                </button>
               </div>
-            </button>
+
+              {/* Mobile Menu Toggle */}
+              <button 
+                className="relative w-12 h-12 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal hover:bg-charcoal hover:text-luxury-white transition-colors bg-luxury-white/50 backdrop-blur-sm"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle Menu"
+              >
+                <div className="w-5 h-4 flex flex-col justify-between">
+                  <span className={`w-full h-[2px] bg-current transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+                  <span className={`w-full h-[2px] bg-current transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
+                  <span className={`w-full h-[2px] bg-current transition-transform duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+                </div>
+              </button>
+            </div>
           </nav>
         </Container>
       </header>
@@ -115,21 +134,6 @@ export default function Navbar() {
         }`}
       >
         <Container className="flex flex-col gap-8 h-full justify-center">
-          {/* Mobile Language Toggle */}
-          <div className="flex items-center gap-2 border border-charcoal/10 rounded-full p-1 bg-luxury-white/50 backdrop-blur-sm self-start mb-4">
-            <button 
-              onClick={() => { setLanguage('en'); setIsMobileMenuOpen(false); }}
-              className={`text-sm font-semibold uppercase tracking-widest px-6 py-2 rounded-full transition-colors ${language === 'en' ? 'bg-charcoal text-luxury-white' : 'text-slate hover:text-charcoal'}`}
-            >
-              EN
-            </button>
-            <button 
-              onClick={() => { setLanguage('ta'); setIsMobileMenuOpen(false); }}
-              className={`text-sm font-semibold uppercase tracking-widest px-6 py-2 rounded-full transition-colors ${language === 'ta' ? 'bg-charcoal text-luxury-white' : 'text-slate hover:text-charcoal'}`}
-            >
-              TA
-            </button>
-          </div>
 
           {[
             { label: dict.navbar.liveDemos, href: '#demos' },
