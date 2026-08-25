@@ -25,6 +25,7 @@
 
   --font-display: 'League Spartan', sans-serif;
   --font-body: 'Inter', sans-serif;
+  --font-tropika: var(--font-tropika), sans-serif;
 
   /* Custom shadows */
   --shadow-subtle: 0 1px 3px rgba(0,0,0,0.04);

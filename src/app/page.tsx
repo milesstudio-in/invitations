@@ -13,7 +13,7 @@ export default function Home() {
       <Navbar />
       
       <Hero />
-      <PathirikkaiReveal />
+      {/* <PathirikkaiReveal /> */}
       <ServiceStory />
       <DemoWebsites />
       <CityMarquee />

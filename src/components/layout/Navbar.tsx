@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Container from '../ui/Container';
 import MagneticElement from '../animations/MagneticElement';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
@@ -29,12 +30,13 @@ export default function Navbar() {
         <Container>
           <nav className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="relative z-50 group flex items-center">
-              <span className="font-display text-2xl tracking-tighter">
+            <Link href="/" className="relative z-50 group flex flex-col items-start justify-center">
+              <span className="font-tropika text-3xl tracking-wide leading-none">
                 <span className="text-charcoal font-bold">Miles</span>
                 <span className="text-champagne font-medium">Studio</span>
-                <span className="text-maroon mx-1">.</span>
-                <span className="text-slate font-light tracking-normal text-xl">Invitations</span>
+              </span>
+              <span className="font-display text-[10px] md:text-[11px] tracking-[0.25em] text-slate/80 uppercase mt-1 ml-0.5">
+                Invitations
               </span>
             </Link>
 

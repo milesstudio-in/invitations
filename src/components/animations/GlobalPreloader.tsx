@@ -64,12 +64,15 @@ export default function GlobalPreloader() {
         ref={textRef}
         className="relative z-10 opacity-0"
       >
-        <h1 className="text-4xl md:text-6xl lg:text-8xl font-display tracking-tighter uppercase flex items-center justify-center">
-          <span className="font-bold text-charcoal">Miles</span>
-          <span className="font-light text-champagne">Studio</span>
-          <span className="text-maroon mx-2 md:mx-4 font-bold">.</span>
-          <span className="font-light text-slate">Invitations</span>
-        </h1>
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="text-5xl md:text-7xl lg:text-9xl font-tropika tracking-wide leading-none">
+            <span className="font-bold text-charcoal">Miles</span>
+            <span className="font-light text-champagne">Studio</span>
+          </h1>
+          <span className="font-display font-medium tracking-[0.3em] md:tracking-[0.5em] text-slate/80 text-sm md:text-xl lg:text-2xl uppercase mt-2 md:mt-4">
+            Invitations
+          </span>
+        </div>
       </div>
     </div>
   );

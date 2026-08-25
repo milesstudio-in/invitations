@@ -1,5 +1,6 @@
 import Container from '../ui/Container';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,7 +10,7 @@ export default function Footer() {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-24">
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-display mb-6">
+            <h3 className="text-3xl font-tropika tracking-wide mb-6">
               <span className="text-luxury-white font-medium">Miles</span>
               <span className="text-champagne font-light ml-1">Studio</span>
             </h3>
@@ -56,7 +57,7 @@ export default function Footer() {
 
         {/* Massive text at the bottom */}
         <div className="w-full flex justify-center translate-y-[20%] pointer-events-none select-none overflow-hidden h-[12vw] min-h-[100px]">
-          <h1 className="text-[15vw] leading-none font-display font-bold text-white/[0.02] uppercase tracking-tighter whitespace-nowrap">
+          <h1 className="text-[15vw] leading-none font-tropika font-bold text-white/[0.02] uppercase tracking-tighter whitespace-nowrap">
             MILES STUDIO
           </h1>
         </div>
