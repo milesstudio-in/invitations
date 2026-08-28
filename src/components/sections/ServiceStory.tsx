@@ -225,7 +225,7 @@ export default function ServiceStory() {
                         src={service.img}
                         alt={service.title}
                         fill
-                        priority={index === 0}
+                        priority={true}
                         sizes="(max-width: 768px) 280px, 320px"
                         className="object-cover object-top"
                       />

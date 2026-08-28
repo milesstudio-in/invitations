@@ -4,6 +4,7 @@ import PathirikkaiReveal from '@/components/sections/PathirikkaiReveal';
 import ServiceStory from '@/components/sections/ServiceStory';
 import DemoWebsites from '@/components/sections/DemoWebsites';
 import CityMarquee from '@/components/sections/CityMarquee';
+import Pricing from '@/components/sections/Pricing';
 import Contact from '@/components/sections/Contact';
 import Footer from '@/components/sections/Footer';
 
@@ -17,6 +18,7 @@ export default function Home() {
       <ServiceStory />
       <DemoWebsites />
       <CityMarquee />
+      <Pricing />
       <Contact />
       
       <Footer />

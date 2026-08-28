@@ -48,6 +48,7 @@ export default function Navbar() {
                 {[
                   { label: dict.navbar.liveDemos, href: '#demos' },
                   { label: dict.navbar.services, href: '#services' },
+                  { label: dict.navbar.pricing, href: '#pricing' },
                   { label: dict.navbar.contact, href: '#contact' },
                 ].map((item) => (
                   <MagneticElement key={item.href} strength={20}>
@@ -138,6 +139,7 @@ export default function Navbar() {
           {[
             { label: dict.navbar.liveDemos, href: '#demos' },
             { label: dict.navbar.services, href: '#services' },
+            { label: dict.navbar.pricing, href: '#pricing' },
             { label: dict.navbar.contact, href: '#contact' },
           ].map((item, i) => (
             <Link 

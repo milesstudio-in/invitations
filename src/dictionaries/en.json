@@ -3,7 +3,8 @@
     "liveDemos": "Live Demos",
     "services": "Services",
     "contact": "Contact",
-    "whatsappUs": "WhatsApp Us"
+    "whatsappUs": "WhatsApp Us",
+    "pricing": "Pricing"
   },
   "hero": {
     "badge": "Digital Invitations",
@@ -17,18 +18,54 @@
     "title": "Curated Experiences.",
     "subtitle": "Explore our meticulously crafted template designs, ready to be personalized for your event.",
     "viewDemo": "View Demo",
-    "engagement": { "title": "Engagement Design", "category": "Engagement", "desc": "A beautiful and simple digital invitation to announce your engagement." },
-    "wedding": { "title": "Wedding Design", "category": "Marriage", "desc": "An elegant digital invitation to share all your wedding details with guests." },
-    "birthday": { "title": "Birthday Design", "category": "Birthday", "desc": "A fun and colorful digital invitation for your birthday celebration." }
+    "engagement": {
+      "title": "Engagement Design",
+      "category": "Engagement",
+      "desc": "A beautiful and simple digital invitation to announce your engagement."
+    },
+    "wedding": {
+      "title": "Wedding Design",
+      "category": "Marriage",
+      "desc": "An elegant digital invitation to share all your wedding details with guests."
+    },
+    "birthday": {
+      "title": "Birthday Design",
+      "category": "Birthday",
+      "desc": "A fun and colorful digital invitation for your birthday celebration."
+    }
   },
   "services": {
     "invitationDesign": "Invitation Design",
-    "wedding": { "title": "Weddings", "subtitle": "Thirumanam", "desc": "Share your love story and wedding details with a beautiful, interactive digital invitation." },
-    "engagement": { "title": "Engagement", "subtitle": "Nitchayathartham", "desc": "Announce your union to the world with an elegant, sharable digital invitation." },
-    "babyShower": { "title": "Baby Shower", "subtitle": "Valaikappu", "desc": "Celebrate the upcoming arrival of your little one with friends and family." },
-    "naming": { "title": "Naming Ceremony", "subtitle": "Peyar Suttum Vizha", "desc": "Welcome your newborn and share their beautiful name with the world." },
-    "firstBirthday": { "title": "1st Birthday", "subtitle": "Ayush Homam", "desc": "Make their first milestone memorable with an interactive digital story." },
-    "housewarming": { "title": "Housewarming", "subtitle": "Gruhapravesam", "desc": "Invite your loved ones to bless your new home and share in your joy." }
+    "wedding": {
+      "title": "Weddings",
+      "subtitle": "Thirumanam",
+      "desc": "Share your love story and wedding details with a beautiful, interactive digital invitation."
+    },
+    "engagement": {
+      "title": "Engagement",
+      "subtitle": "Nitchayathartham",
+      "desc": "Announce your union to the world with an elegant, sharable digital invitation."
+    },
+    "babyShower": {
+      "title": "Baby Shower",
+      "subtitle": "Valaikappu",
+      "desc": "Celebrate the upcoming arrival of your little one with friends and family."
+    },
+    "naming": {
+      "title": "Naming Ceremony",
+      "subtitle": "Peyar Suttum Vizha",
+      "desc": "Welcome your newborn and share their beautiful name with the world."
+    },
+    "firstBirthday": {
+      "title": "1st Birthday",
+      "subtitle": "Ayush Homam",
+      "desc": "Make their first milestone memorable with an interactive digital story."
+    },
+    "housewarming": {
+      "title": "Housewarming",
+      "subtitle": "Gruhapravesam",
+      "desc": "Invite your loved ones to bless your new home and share in your joy."
+    }
   },
   "marquee": {
     "serving": "Serving Worldwide",
@@ -64,6 +101,52 @@
       "Housewarming",
       "Baby Shower",
       "Other Event"
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Investment",
+    "title": "Fair & Transparent Pricing.",
+    "subtitle": "Affordable pricing that matches the premium quality and effort put into each design.",
+    "tiers": [
+      {
+        "name": "Classic Digital",
+        "price": "999",
+        "popular": false,
+        "features": [
+          "Pre-designed Premium Templates",
+          "Personalized Event Details",
+          "Responsive Design (Mobile & Desktop)",
+          "Clickable Map Links",
+          "1 Year Free Hosting"
+        ],
+        "cta": "Choose Classic"
+      },
+      {
+        "name": "Custom Interactive",
+        "price": "1,999",
+        "popular": true,
+        "features": [
+          "Custom Premium Animations (GSAP)",
+          "Background Music Integration",
+          "Interactive Photo Gallery",
+          "In-built RSVP Form",
+          "Countdown Timer"
+        ],
+        "cta": "Choose Custom"
+      },
+      {
+        "name": "Bespoke Signature",
+        "price": "2999",
+        "popular": false,
+        "features": [
+          "Fully Custom Illustrated Design",
+          "Multi-Event Storytelling Pages",
+          "Bespoke Interactive Elements",
+          "Advanced RSVP Management",
+          "Lifetime Hosting Archive"
+        ],
+        "cta": "Choose Bespoke"
+      }
     ]
   }
 }
