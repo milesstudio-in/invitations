@@ -7,7 +7,7 @@
     "pricing": "Pricing"
   },
   "hero": {
-    "badge": "Digital Invitations",
+    "badge": "Starting from ₹499",
     "titleLine1": "Look Premium.",
     "titleLine2": "Invite Better.",
     "description": "Not just beautiful, built to leave a lasting impression. We craft digital experiences that capture the essence of your most important day.",
@@ -106,7 +106,7 @@
   "pricing": {
     "eyebrow": "Pricing",
     "title": "Fair & Transparent Pricing.",
-    "subtitle": "Affordable pricing that matches the premium quality of our designs.",
+    "subtitle": "Starting from ₹499. Premium designs that fit your budget perfectly.",
     "tiers": [
       {
         "name": "Essential",
