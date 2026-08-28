@@ -8,6 +8,7 @@ interface SectionHeadingProps extends HTMLAttributes<HTMLDivElement> {
   subtitle?: string;
   eyebrow?: string;
   align?: 'left' | 'center';
+  theme?: 'light' | 'dark';
 }
 
 export default function SectionHeading({
@@ -15,6 +16,7 @@ export default function SectionHeading({
   subtitle,
   eyebrow,
   align = 'center',
+  theme = 'light',
   className,
   ...props
 }: SectionHeadingProps) {
@@ -24,14 +26,16 @@ export default function SectionHeading({
         "flex flex-col space-y-6 mb-16 md:mb-24",
         {
           "items-start text-left": align === 'left',
-          "items-center text-center mx-auto": align === 'center'
+          "items-center text-center mx-auto": align === 'center',
+          "text-charcoal": theme === 'light',
+          "text-luxury-white": theme === 'dark'
         },
         className
       )}
       {...props}
     >
       {eyebrow && (
-        <Badge variant="outline" className="opacity-80">
+        <Badge variant={theme === 'dark' ? 'secondary' : 'outline'} className="opacity-80">
           {eyebrow}
         </Badge>
       )}
@@ -47,7 +51,8 @@ export default function SectionHeading({
       
       {subtitle && (
         <p className={cn(
-          "text-lg text-slate font-body max-w-2xl leading-relaxed mt-4",
+          "text-lg font-body max-w-2xl leading-relaxed mt-4",
+          theme === 'dark' ? "text-luxury-white/70" : "text-slate",
           align === 'center' && "mx-auto"
         )}>
           {subtitle}

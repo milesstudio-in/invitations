@@ -104,48 +104,91 @@
     ]
   },
   "pricing": {
-    "eyebrow": "Investment",
+    "eyebrow": "Pricing",
     "title": "Fair & Transparent Pricing.",
-    "subtitle": "Affordable pricing that matches the premium quality and effort put into each design.",
+    "subtitle": "Affordable pricing that matches the premium quality of our designs.",
     "tiers": [
       {
-        "name": "Classic Digital",
+        "name": "Essential",
         "price": "999",
+        "originalPrice": "1,999",
         "popular": false,
         "features": [
-          "Pre-designed Premium Templates",
-          "Personalized Event Details",
-          "Responsive Design (Mobile & Desktop)",
-          "Clickable Map Links",
-          "1 Year Free Hosting"
+          "1 Page Premium Invitation",
+          "Up to 5 Photos",
+          "Event Details & Maps",
+          "Direct WhatsApp Link",
+          "48 Hours Delivery"
         ],
-        "cta": "Choose Classic"
+        "cta": "Choose Essential"
       },
       {
-        "name": "Custom Interactive",
-        "price": "1,999",
+        "name": "Custom Premium",
+        "price": "2,499",
+        "originalPrice": "3,999",
         "popular": true,
         "features": [
-          "Custom Premium Animations (GSAP)",
-          "Background Music Integration",
-          "Interactive Photo Gallery",
+          "Multi-page Custom Design",
+          "Unlimited Photos Gallery",
           "In-built RSVP Form",
-          "Countdown Timer"
+          "Background Music",
+          "24 Hours Fast Delivery"
         ],
-        "cta": "Choose Custom"
+        "cta": "Choose Premium"
       },
       {
-        "name": "Bespoke Signature",
-        "price": "2999",
+        "name": "Bespoke",
+        "price": "On Request",
+        "originalPrice": "",
         "popular": false,
         "features": [
           "Fully Custom Illustrated Design",
-          "Multi-Event Storytelling Pages",
-          "Bespoke Interactive Elements",
+          "Multi-Event Pages",
+          "Custom Animations",
           "Advanced RSVP Management",
-          "Lifetime Hosting Archive"
+          "Lifetime Hosting"
         ],
-        "cta": "Choose Bespoke"
+        "cta": "Contact Us"
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "How it works",
+    "title": "Simple, friendly, & quick.",
+    "steps": [
+      {
+        "title": "1. Choose a Design",
+        "desc": "Browse our collection or share your idea with us."
+      },
+      {
+        "title": "2. Share Details",
+        "desc": "Send your photos and event details easily on WhatsApp."
+      },
+      {
+        "title": "3. We Create It",
+        "desc": "Your personalised invitation is live in 24-48 hours!"
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "eyebrow": "Why Choose Us",
+    "title": "Everything you need, nothing complicated.",
+    "features": [
+      {
+        "title": "Mobile Friendly",
+        "desc": "Looks beautiful on every phone — no pinch or zoom needed."
+      },
+      {
+        "title": "Easy Sharing",
+        "desc": "Share your invitation instantly with a single WhatsApp link."
+      },
+      {
+        "title": "Premium Quality",
+        "desc": "Elegant, modern designs that leave a lasting impression."
+      },
+      {
+        "title": "Lightning Fast",
+        "desc": "Quick turnaround times so you can invite guests sooner."
       }
     ]
   }

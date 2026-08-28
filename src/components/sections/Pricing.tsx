@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
@@ -38,12 +38,19 @@ export default function Pricing() {
               )}
               
               <div className="mb-8 text-center">
-                <h3 className={`text-xl font-display mb-4 ${tier.popular ? 'text-champagne' : 'text-maroon'}`}>
+                <h3 className={`text-xl font-display mb-2 ${tier.popular ? 'text-champagne' : 'text-maroon'}`}>
                   {tier.name}
                 </h3>
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  {tier.originalPrice && (
+                    <span className="text-xl text-slate/50 line-through">₹{tier.originalPrice}</span>
+                  )}
+                </div>
                 <div className="flex items-start justify-center gap-1">
-                  <span className="text-2xl font-medium mt-2">₹</span>
-                  <span className="text-6xl font-display font-bold tracking-tight">{tier.price}</span>
+                  {tier.price !== 'On Request' && tier.price !== 'தொடர்புக்கு' && <span className="text-2xl font-medium mt-2">₹</span>}
+                  <span className={`${tier.price === 'On Request' || tier.price === 'தொடர்புக்கு' ? 'text-3xl mt-4' : 'text-6xl'} font-display font-bold tracking-tight`}>
+                    {tier.price}
+                  </span>
                 </div>
               </div>
 
