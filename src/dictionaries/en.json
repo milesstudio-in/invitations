@@ -110,42 +110,44 @@
     "tiers": [
       {
         "name": "Essential",
-        "price": "999",
-        "originalPrice": "1,999",
+        "price": "499",
+        "originalPrice": "999",
         "popular": false,
         "features": [
           "1 Page Premium Invitation",
           "Up to 5 Photos",
-          "Event Details & Maps",
-          "Direct WhatsApp Link",
+          "Event Details & Map",
+          "WhatsApp Sharing",
           "48 Hours Delivery"
         ],
         "cta": "Choose Essential"
       },
       {
-        "name": "Custom Premium",
-        "price": "2,499",
-        "originalPrice": "3,999",
+        "name": "Premium",
+        "price": "1,499",
+        "originalPrice": "2,499",
         "popular": true,
         "features": [
-          "Multi-page Custom Design",
+          "Multi-page + Custom Design",
           "Unlimited Photos Gallery",
-          "In-built RSVP Form",
           "Background Music",
-          "24 Hours Fast Delivery"
+          "RSVP & Countdown",
+          "Fast 24 Hours Delivery",
+          "Your Own Photos"
         ],
         "cta": "Choose Premium"
       },
       {
-        "name": "Bespoke",
+        "name": "Custom",
         "price": "On Request",
         "originalPrice": "",
         "popular": false,
         "features": [
-          "Fully Custom Illustrated Design",
-          "Multi-Event Pages",
-          "Custom Animations",
-          "Advanced RSVP Management",
+          "Fully Custom Design",
+          "Design Animations",
+          "Illustration Design",
+          "Advanced Features",
+          "Multiple Events",
           "Lifetime Hosting"
         ],
         "cta": "Contact Us"
