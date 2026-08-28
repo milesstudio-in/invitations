@@ -3,7 +3,7 @@ import { cn } from './Container';
 
 interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   children: ReactNode;
-  variant?: 'default' | 'outline' | 'accent';
+  variant?: 'default' | 'outline' | 'accent' | 'secondary';
 }
 
 export default function Badge({
@@ -15,7 +15,8 @@ export default function Badge({
   const variants = {
     default: "bg-charcoal/5 text-charcoal",
     outline: "border border-charcoal/20 text-charcoal",
-    accent: "bg-champagne/10 text-champagne-dark"
+    accent: "bg-champagne/10 text-champagne-dark",
+    secondary: "border border-luxury-white/20 text-luxury-white"
   };
 
   return (
