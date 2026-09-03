@@ -18,9 +18,9 @@ export default function Footer() {
               A luxury digital invitation studio crafting bespoke, cinematic experiences for the world's most discerning hosts.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-white hover:text-champagne transition-colors">Instagram</a>
-              <a href="#" className="text-white hover:text-champagne transition-colors">Pinterest</a>
-              <a href="#" className="text-white hover:text-champagne transition-colors">Behance</a>
+              <a href="https://instagram.com/milesstudio.in" target="_blank" rel="noopener noreferrer" className="text-white hover:text-champagne transition-colors">Instagram</a>
+              <a href="https://milesstudio.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-champagne transition-colors">Main Website</a>
+              <a href="https://wa.me/918489189183" target="_blank" rel="noopener noreferrer" className="text-white hover:text-champagne transition-colors">WhatsApp</a>
             </div>
           </div>
 

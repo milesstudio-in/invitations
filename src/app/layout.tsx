@@ -11,8 +11,17 @@ const tropika = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "MilesStudio.Invitations | Luxury Digital Invitations",
-  description: "Bespoke digital experiences for your most important moments.",
+  title: "Miles Studio Invitations | Luxury Digital Wedding Invitations",
+  description: "Miles Studio is a premium digital agency crafting luxury digital wedding invitations and interactive event websites. Share your special day elegantly.",
+  keywords: ["Miles Studio", "Digital Invitations", "Wedding Invitations", "Tamil Digital Invitations", "Miles Studio Invitations", "Interactive Invitations"],
+  openGraph: {
+    title: "Miles Studio Invitations | Premium Digital Experiences",
+    description: "Bespoke digital experiences for your most important moments.",
+    url: "https://milesstudioinvitations.vercel.app/",
+    siteName: "Miles Studio",
+    locale: "en_IN",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
